@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Experiences from './Experiences'
-import experiencesData from './experiences.json'
-import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import SkillSet from './SkillSets';
 import Modal from './Modal';
+import { AppContext } from './AppContext';
 
 const MainContent = () => {
 
-  const [data, setData] = useState([]);
+  const {user} = useContext(AppContext)
+
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -94,9 +94,12 @@ const MainContent = () => {
 
         <div className='header-section'>
           <h2>PROFESSIONAL EXPERIENCE</h2>
-          <button className="btn-primary" onClick={() => setShowModal(true)}>
-            Add Experience
-          </button>
+
+          {user && (
+            <button className="btn-primary" onClick={() => setShowModal(true)}>
+              Add Experience
+            </button>
+          )}
         </div>
 
         {experiences.map((experience , index) => (
@@ -110,7 +113,7 @@ const MainContent = () => {
               description={experience.description}
               environment={experience.environment}
               />
-              <button onClick={() => handleDeleteExperience(experience.id)}>Delete</button>
+              {/* <button className="btn-primary" onClick={() => handleDeleteExperience(experience.id)}>Delete</button> */}
             </div>
         )
         )}

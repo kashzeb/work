@@ -207,7 +207,7 @@ button{
 
     .main-content-area {
         width: calc(100% - var(--sidebar-size));
-        margin-left: calc(32px + var(--sidebar-size));
+        margin-left: var(--sidebar-size);
         overflow: hidden;
         padding: 16px;
 

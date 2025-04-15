@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Modal from './Modal';
+import { AppContext } from './AppContext';
 
 const SkillSet = () => {
   const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const {user} = useContext(AppContext)
 
 
   const apiURL = 'https://67fb4c118ee14a542629a7a0.mockapi.io/skills';
@@ -72,14 +75,20 @@ const SkillSet = () => {
     <div className='skillset-section'>
         <div className='header-section'>
           <h2>Skillsets</h2>
+          {user && (
           <button className="btn-primary" onClick={() => setShowModal(true)}>
             Add Skills
           </button>
+          )}
         </div>
         <div className='skills-wrapper'>
           {skills.map((skill, index) => (
             <span key={index} className='skills-item'>{skill}
-            <span className='remove-btn' onClick={() => handleDeleteSkill(skill)}>-</span>
+
+            {user && (
+              <span className='remove-btn' onClick={() => handleDeleteSkill(skill)}>-</span>
+            )}
+            
             </span>
             
           ))}
