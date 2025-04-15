@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/my-coding-references/static/css/main.38507771.css",
+    "main.js": "/my-coding-references/static/js/main.218084b3.js",
+    "static/js/453.acca0757.chunk.js": "/my-coding-references/static/js/453.acca0757.chunk.js",
+    "static/media/kashif-khan-front-end-developer.jpg": "/my-coding-references/static/media/kashif-khan-front-end-developer.e2b7d66c3590bbf711de.jpg",
+    "index.html": "/my-coding-references/index.html",
+    "main.38507771.css.map": "/my-coding-references/static/css/main.38507771.css.map",
+    "main.218084b3.js.map": "/my-coding-references/static/js/main.218084b3.js.map",
+    "453.acca0757.chunk.js.map": "/my-coding-references/static/js/453.acca0757.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38507771.css",
+    "static/js/main.218084b3.js"
+  ]
+}
