@@ -15,16 +15,33 @@ const Sidebar = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   const handleSubmit = async (e) => {
     console.log('handleSubmit function called!');
     e.preventDefault();
     await handleLogin(username, password);
   };
+
+  function toggleSidebar () {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
   
 
 
   return (
-    <div className='sidebar'>
+    <div>
+      <nav className='mob-menu' >
+        <div className='thumbnail'>
+            <img src={`${process.env.PUBLIC_URL}/kashif-khan-front-end-developer-profile-pic.jpg`} alt='thumbnail' />
+        </div>
+          <svg onClick={toggleSidebar} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </nav>
+
+    {/* Overlay */}
+    {isSidebarOpen && <div className="overlay" onClick={() => setIsSidebarOpen(false)}></div>}
+
+    <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
 
       <div>
         <div className='thumbnail'>
@@ -34,18 +51,19 @@ const Sidebar = () => {
         <p>Front-end Developer</p> */}
 
         <nav className='menu'>
-          <NavLink  to="/" className='menu-item'>Home</NavLink >
-          <NavLink  to="/about-me" className='menu-item'>About Me</NavLink >
-          <NavLink  to="/skills" className='menu-item'>Skills</NavLink >
-          <NavLink  to="/experience" className='menu-item'>Work Experience</NavLink >
+          <NavLink  to="/work" className='menu-item' onClick={toggleSidebar}>Home</NavLink >
+          <NavLink  to="/about-me" className='menu-item' onClick={toggleSidebar}>About Me</NavLink >
+          <NavLink  to="/skills" className='menu-item' onClick={toggleSidebar}>Skills</NavLink >
+          <NavLink  to="/experience" className='menu-item' onClick={toggleSidebar}>Work Experience</NavLink >
         </nav>
+
+        
+
       </div>
 
       <div>
       {!user && (
-        <button className="btn-primary" onClick={() => setShowModal(true)}>
-          Login
-        </button>
+        <NavLink  to="/login" className='btn-primary-link' onClick={toggleSidebar}>Login</NavLink >
       )}
 
         {user && (
@@ -98,6 +116,7 @@ const Sidebar = () => {
             </div>
           </Modal>
         )}
+    </div>
     </div>
   )
 }

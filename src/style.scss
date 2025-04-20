@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {
-    --primary-font-size: 14px;
+    --primary-font-size: 16px;
+    --mob-font-size: 14px;
     --heading-font-size: 16px;
     --color-white: #ffffff;
     --color-black: #000000;
@@ -22,6 +23,27 @@
     box-sizing: border-box;
 }
 
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
 body {
     font-family: var(--font-family);
     
@@ -33,6 +55,7 @@ p {
     color: var(--text-color-grey);
     margin-bottom: 12px;
     line-height: 1.7;
+    font-size: var(--primary-font-size);
 }
 
 h2 {
@@ -103,10 +126,18 @@ h2 {
     justify-content: space-between;
 }
 
+.w-100{
+    width: 100% !important;
+}
+
 input, textarea{
-    border: 1px solid #040b14;
-    border-radius: 2px;
-    padding: 6px 8px;
+    border: 1px solid var(--card-bg-grey);
+    border-radius: 8px;
+    padding: 16px 24px;
+    background: var(--input-bg-grey);
+    width: 100%;
+    margin-bottom: 16px;
+    color: var(--color-white);
 }
 
 .header-section{
@@ -140,6 +171,42 @@ button{
     border: 1px solid #448C74;
     &:hover{
         background: #448C74;
+        color: var(--color-white);
+    }
+}
+
+.btn-link{
+    background: transparent;
+    border: none;
+    padding: 12px 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    transition: 0.2s all;
+    width: 100%;
+    text-align: center;
+
+    &:hover{
+        background: var(--primary-color);
+        color: var(--color-white);
+    }
+}
+
+.btn-primary-link{
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 12px 20px;
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    transition: 0.2s all;
+    width: 100%;
+    text-align: center;
+
+    &:hover{
+        background: transparent;
         color: var(--color-white);
     }
 }
@@ -351,13 +418,64 @@ button{
             height: 100vh;
             display: flex;
             align-items: center;
+
+            .about-copy{
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                width: 100%;
+
+                .left, .right{
+                    flex-basis: 48%;
+                }
+
+                h5{
+                    font-size: 24px;
+                    color: var(--color-white);
+                    line-height: 110%;
+                    margin-top: 0px;
+                }
+
+                .right{
+                    p{
+                        span{
+                            color: var(--color-white);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
         }
 
         .experiences-section{
             height: 100vh;
             display: flex;
-            align-items: flex;
-            
+            align-items: flex-start;
+            padding-bottom: 60px;
+
+        }
+
+        .login-section{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            .content-area{
+                background: var(--card-bg-grey);
+                padding: 16px;
+                border-radius: 8px;
+            }
+            h2{
+                color: var(--color-white);
+                margin: 0px;
+                font-size: 30px;
+
+                &::after{
+                    display: none;
+                }
+            }
         }
 
         .skillset-section {
@@ -371,20 +489,31 @@ button{
                 flex-wrap: wrap;
 
                 .skills-item {
-                    background: var(--primary-color);
+                    background: var(--card-bg-grey);
                     border: 1px solid var(--background-grey);
                     color: var(--color-white);
                     font-size: 14px;
                     // border: none;
                     border-radius: 10px;
-                    height: 26px;
-                    padding-inline: 12px;
+                    // height: 26px;
+                    padding: 22px 30px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-right: 4px;
-                    margin-bottom: 4px;
+                    margin-right: 16px;
+                    margin-bottom: 16px;
                     position: relative;
+                    transition: 0.4s all;
+                    
+
+                    &:hover{
+                        background: var(--primary-color);
+                        // box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                        box-shadow: 0px 0px 5px var(--primary-color);
+                        border: 1px solid var(--primary-color);
+                        // scale: 1.08;
+                        transform: translateY(-5px);
+                    }
 
                     .remove-btn{
                         position: absolute;
@@ -407,6 +536,8 @@ button{
             padding: 12px;
             border-radius: 10px;
             margin-bottom: 12px;
+            border: 1px solid var(--background-grey);
+            transition: 0.5s all;
 
             .job-title{
                 margin: 0px;
@@ -417,39 +548,119 @@ button{
             .environment{
                 margin-bottom: 0px;
             }
+
+            &:hover{
+                background: var(--background-grey);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                // box-shadow: 0px 0px 5px var(--primary-color);
+                border: 1px solid var(--background-grey);
+                // scale: 1.08;
+                transform: translateY(-3px);
+            }
         }
     }
 
 
 }
 
+.mob-menu{
+    display: none;
+}
 
 
 @media screen and (max-width: 768px) {
 
+    h2{
+        font-size: 20px;
+
+        &::after{
+            width: 25px;
+        }
+    }
+
+    p{
+        font-size: var(--mob-font-size);
+    }
+
     .main-wrapper{
         flex-direction: column;
         overflow: hidden;
+
         .sidebar{
-            width: 100%;
-            height: auto;
-            flex-direction: column;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+
+            &.open {
+                transform: translateX(0);
+            }
+        }
+
+        .mob-menu{
+            position: fixed;
+            display: flex;
+            align-items: center;
             justify-content: space-between;
-            position: static;
+            width: 100%;
+            padding: 8px 16px;
+            background: var(--card-bg-grey);
+
 
             .thumbnail{
                 width: auto;
                 height: auto;
 
                 img{
-                    width: 60px;
-                    height: 60px;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    object-fit: cover;
                 }
             }
         }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+          
+            @media (min-width: 768px) {
+              display: none;
+            }
+          }
+
         .main-content-area{
             margin: 0px;
             width: 100%;
+            padding-top: 60px;
+
+            .about-section{
+                height: auto;
+                .about-copy{
+                    justify-content: flex-start;
+                    flex-direction: column;
+
+                    .left, .right{
+                        flex-basis: 100%;
+                    }
+                }
+            }
+            
+            .skillset-section{
+                height: auto;
+
+                .skills-wrapper{
+                    .skills-item{
+                        padding: 12px 20px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
         }
     }
 }

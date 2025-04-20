@@ -8,6 +8,7 @@ import { AppContext } from './AppContext';
 import DropdownWithValidation from './DropdownwithValidation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HeroSection from './HeroSection';
+import Login from './Login';
 
 const MainContent = () => {
 
@@ -87,7 +88,8 @@ const MainContent = () => {
 
 
             <Routes>
-            <Route path="/" element={<HeroSection />} />
+            <Route path="/work/" element={<HeroSection />} />
+            <Route path="/login" element={<Login />} />
         <Route path="/about-me" element={<AboutSection />} />
 
         <Route

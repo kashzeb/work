@@ -4,19 +4,28 @@ const AboutSection = () => {
   return (
     <div className='about-section'>
         <div className='content-area'>
-        <h2>About</h2>
+        
 
-        <p>Computer Science graduate with more than 12 years of experience in Analysis, Design, Development and implementation of Web Designing Applications in sectors like FinTech, Education, Telecom, Travel and Ecommerce.</p>
+        <div className='about-copy'>
+          <div className='left'>
+          <h2>About</h2>
+          <p>With over 13 years of expertise in web and mobile application design and development, i specialize in creating dynamic, responsive, and user-centric digital experiences. My journey spans across FinTech, Education, Telecom, Travel, and E-commerce sectors, delivering innovative solutions that align with client goals.</p>
 
-        <p>Extensive experience in HTML5, CSS3, React Native, Angular(Frontend), Typescript, JavaScript and ES6, Photoshop, WordPress, Shopify, Bootstrap, SASS, React JS, jQuery etc</p>
-        <p>Designed and Developed websites and Mobile App driving continuous improvement to processes, systems, workflow and customer responsiveness with a strong focus on design and user experience.</p>
-        <p>Worked on creating dynamic, rich and responsive websites, landing pages, emailer and of providing long term solutions to frontend problems.</p>
-        <p>Experience in collaboratively working with the product management team to organize the web presence of clients, and to develop rich user interfaces for them.</p>
-        <p>Strengths in communication and interpersonal skills with the capability to coordinate with both internal and external stakeholders at all levels.</p>
-
-        <p className='spacer'></p>
-        <h2>Education</h2>
-        <p>B.Sc. in Computer Science from JaiHind College, Mumbai, India in 2010</p>
+          <p>I bring deep technical proficiency in HTML5, CSS3, JavaScript, React, Angular, TypeScript, WordPress, and more. From front-end design to collaborative product management, i focus on usability, design excellence, and scalable performance.</p>
+          <p>Driven by a passion for technology and design, i aim to empower businesses through creative solutions and seamless user experiences.</p>
+          </div>
+          <div className='right'>
+            <h2>Personal Information</h2>
+            <p>Name: <span>Kashif Khan</span></p>
+            <p>Age: <span>36 Years</span></p>
+            <p>Residence: <span>Mumbai, India</span></p>
+            <p>Address: <span>Vashi</span></p>
+            <p>Email: <span>kashif_khan1919@yahoo.com</span></p>
+            <p>Phone: <span>(+91) 977 349 7001</span></p>
+            <p>Freelance: <span>Available</span></p>
+            <p>Qualification: <span>B.Sc. in Computer Science from JaiHind College, Mumbai, India in 2010</span></p>
+          </div>
+        </div>
         </div>
 
     </div>
