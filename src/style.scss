@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {
     --primary-font-size: 14px;
     --heading-font-size: 16px;
-
     --color-white: #ffffff;
     --color-black: #000000;
+    --sidebar-size: 200px;
+    --primary-color: #ea4343;
+    --background-grey: #3c3c3c;
+    --card-bg-grey: #333232;
+    --text-color-grey: #b6b2bf;
+    --input-bg-grey: #4d4c4c;
 
-    --sidebar-size: 200px
+    --font-family: "Space Grotesk", sans-serif;;
+    // --font-family: "Josefin Sans", sans-serif;
 }
 
 *{
@@ -15,14 +23,16 @@
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--font-family);
+    
 }
 
 p {
     margin: 0px;
     padding: 0px;
-    color: #272829;
+    color: var(--text-color-grey);
     margin-bottom: 12px;
+    line-height: 1.7;
 }
 
 h2 {
@@ -30,6 +40,7 @@ h2 {
     font-weight: 700;
     position: relative;
     margin-block: 16px;
+    color: var(--color-white);
 
     &:after {
         content: "";
@@ -37,7 +48,7 @@ h2 {
         display: block;
         width: 50px;
         height: 3px;
-        background: #149ddd;
+        background: var(--primary-color);
         left: 0;
         bottom: 0;
     }
@@ -108,19 +119,18 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 12px;
-    border-radius: 2px;
+    padding: 12px 18px;
+    border-radius: 6px;
     cursor: pointer;
     transition: 0.3s all;
 }
 
 .btn-primary{
-    background: #448C74;
+    background: var(--primary-color);
     color: var(--color-white);
-    border: 1px solid #448C74;
+    border: 1px solid var(--primary-color);
     &:hover{
-        background: var(--color-white);
-        color: #448C74;
+        background: transparent;
     }
 }
 
@@ -161,23 +171,86 @@ button{
     100% { transform: rotate(360deg); }
   }
 
+  form{
+    display: flex;
+    align-items: center;
+  }
+
+  select{
+    border-radius: 0px;
+    border: 1px solid #bbccc6;
+    width: 200px;
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-right: 12px;
+
+    &:focus-visible{
+        border: 1px solid #448C74 !important;
+    }
+  }
+
+  .menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 60px;
+
+    .menu-item{
+        background: transparent;
+        border: none;
+        padding: 12px 20px;
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 6px;
+        margin-bottom: 6px;
+        transition: 0.2s all;
+        width: 100%;
+        text-align: center;
+
+        &:hover{
+            background: var(--primary-color);
+            color: var(--color-white);
+        }
+    }
+
+    .active{
+        background: var(--primary-color);
+        color: var(--color-white);
+    }
+  }
+
 
 .main-wrapper {
     width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    background: var(--background-grey);
 
     .sidebar {
         padding: 16px;
-        background: #040b14;
+        background: var(--card-bg-grey);
         min-width: var(--sidebar-size);
         height: 100vh;
         color: var(--color-white);
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         align-items: center;
         position: fixed;
+
+        div{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            button{
+                width: 100%;
+            }
+        }
 
         p {
             color: var(--color-white);
@@ -208,8 +281,13 @@ button{
     .main-content-area {
         width: calc(100% - var(--sidebar-size));
         margin-left: var(--sidebar-size);
-        overflow: hidden;
+        height: 100vh;
+        overflow: auto;
         padding: 16px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
 
         h2 {
             padding-bottom: 8px;
@@ -217,14 +295,42 @@ button{
 
         .hero-section {
             width: 100%;
-            height: 100vh;
+            height: 100%;
             padding: 12px;
-            background-image: url('./assets/kashif-khan-front-end-developer.jpg');
-            // background: url('./kashif-khan-front-end-developer.jpg');
             display: flex;
             align-items: center;
             justify-content: flex-start;
 
+            .name{
+                background: var(--input-bg-grey);
+                padding: 8px;
+                border-radius: 8px;
+                font-size: 16px;
+                display: inline-flex;
+                margin-bottom: 8px;
+
+                &::after{
+                    display: none;
+                }
+            }
+
+            p.designation{
+                font-size: 60px;
+                line-height: 64px;
+                margin: 0px;
+                font-weight: 700;
+
+                span{
+                    color: var(--primary-color);
+                }
+            }
+
+            p.description{
+                font-size: 24px;
+                color: var(--text-color-grey);
+                margin-top: 16px;
+                max-width: 750px;
+            }
 
             h2,
             h5 {
@@ -241,9 +347,23 @@ button{
             }
         }
 
-        .about-section {}
+        .about-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .experiences-section{
+            height: 100vh;
+            display: flex;
+            align-items: flex;
+            
+        }
 
         .skillset-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
             .skills-wrapper {
                 display: flex;
                 align-items: center;
@@ -251,10 +371,11 @@ button{
                 flex-wrap: wrap;
 
                 .skills-item {
-                    background: #149ddd;
+                    background: var(--primary-color);
+                    border: 1px solid var(--background-grey);
                     color: var(--color-white);
                     font-size: 14px;
-                    border: none;
+                    // border: none;
                     border-radius: 10px;
                     height: 26px;
                     padding-inline: 12px;
@@ -282,7 +403,7 @@ button{
         }
 
         .experience-wrapper{
-            background: #f2f2f2;
+            background: var(--card-bg-grey);
             padding: 12px;
             border-radius: 10px;
             margin-bottom: 12px;
@@ -291,6 +412,7 @@ button{
                 margin: 0px;
                 font-size: 16px;
                 margin-bottom: 12px;
+                color: var(--color-white);
             }
             .environment{
                 margin-bottom: 0px;

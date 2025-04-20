@@ -1,6 +1,11 @@
 import React, { useContext, useState } from 'react'
 import Modal from './Modal';
 import {AppContext} from './AppContext';
+// import { Link, Route, Router, Routes } from 'react-router-dom';
+import AboutSection from './AboutSection';
+import Experiences from './Experiences';
+import SkillSet from './SkillSets';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
 
@@ -20,16 +25,26 @@ const Sidebar = () => {
 
   return (
     <div className='sidebar'>
+
+      <div>
         <div className='thumbnail'>
             <img src={`${process.env.PUBLIC_URL}/kashif-khan-front-end-developer-profile-pic.jpg`} alt='thumbnail' />
         </div>
-        <h2>Kashif Khan</h2>
-        <p>Front-end Developer</p>
+        {/* <h2>Kashif Khan</h2>
+        <p>Front-end Developer</p> */}
 
+        <nav className='menu'>
+          <NavLink  to="/" className='menu-item'>Home</NavLink >
+          <NavLink  to="/about-me" className='menu-item'>About Me</NavLink >
+          <NavLink  to="/skills" className='menu-item'>Skills</NavLink >
+          <NavLink  to="/experience" className='menu-item'>Work Experience</NavLink >
+        </nav>
+      </div>
 
+      <div>
       {!user && (
         <button className="btn-primary" onClick={() => setShowModal(true)}>
-          Edit Profile
+          Login
         </button>
       )}
 
@@ -41,6 +56,9 @@ const Sidebar = () => {
         </button>
         </div>
       )}
+      </div>
+
+
 
      
 

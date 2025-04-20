@@ -4,6 +4,10 @@ import AboutSection from './AboutSection';
 import SkillSet from './SkillSets';
 import Modal from './Modal';
 import { AppContext } from './AppContext';
+// import Dropdown from './Dropdown';
+import DropdownWithValidation from './DropdownwithValidation';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HeroSection from './HeroSection';
 
 const MainContent = () => {
 
@@ -80,105 +84,105 @@ const MainContent = () => {
       {loading && <div className="modal-overlay">
               <div className="loader"></div>
             </div>}
-      {/* <HeroSection /> */}
 
-      <AboutSection />
 
-      <SkillSet />
-        
+            <Routes>
+            <Route path="/" element={<HeroSection />} />
+        <Route path="/about-me" element={<AboutSection />} />
 
-        {/* <Experiences 
-        jobtitle={'FrontEnd / UI Lead – Homeville Group Pvt. Ltd. – December 2021 – till date.'}
-        description={`Working as Front-End UI Lead. Developing Mobile App using React Native. Maintaining the complete flow of the Mobile Application right from converting design to mobile app screens and then API integration. Also, all the Websites and Admin Portals Frontend Design and Development are gone through me. Technologies used for Frontend Website and Portals are Angular, Bootstrap, SASS, JavaScript, jQuery, Typescript and for Backend are Laravel, PHP. Technologies used for Mobile Application is React Native, Android Studio`} 
-        environment={'React Native, Android Studio, HTML5, CSS3, Angular, JavaScript, jQuery, Typescript, SASS, Git.'}/> */}
+        <Route
+          path="/experience"
+          element={
+            <>
+            <div className='experiences-section'>
+              <div className='content-area'>
+              <div className='header-section'>
+                <h2>PROFESSIONAL EXPERIENCE</h2>
 
-        <div className='header-section'>
-          <h2>PROFESSIONAL EXPERIENCE</h2>
+                {user && (
+                  <button className="btn-primary" onClick={() => setShowModal(true)}>
+                    Add Experience
+                  </button>
+                )}
+              </div>
 
-          {user && (
-            <button className="btn-primary" onClick={() => setShowModal(true)}>
-              Add Experience
-            </button>
-          )}
-        </div>
+              {experiences.map((experience, index) => (
+                <div key={index}>
+                  <Experiences
+                    jobtitle={experience.jobTitle}
+                    companyname={experience.companyName}
+                    startDate={experience.start_date}
+                    endDate={experience.end_date}
+                    description={experience.description}
+                    environment={experience.environment}
+                  />
+                </div>
+              ))}
+              </div>
 
-        {experiences.map((experience , index) => (
-            <div>
-              <Experiences 
-              key={index}
-              jobtitle={experience.jobTitle}
-              companyname={experience.companyName}
-              startDate={experience.start_date}
-              endDate={experience.end_date}
-              description={experience.description}
-              environment={experience.environment}
-              />
-              {/* <button className="btn-primary" onClick={() => handleDeleteExperience(experience.id)}>Delete</button> */}
+              {showModal && (
+                <Modal onClose={() => setShowModal(false)}>
+                  <h5>Add a Experience</h5>
+                  <div className='input-wrapper'>
+                    <input
+                      type="text"
+                      value={jobTitle}
+                      onChange={(e) => setJobTitle(e.target.value)}
+                      className="form-control mb-3"
+                      placeholder="Enter Job Title"
+                    />
+                    <input
+                      type="text"
+                      value={companyName}
+                      onChange={(e) => setCompanyName(e.target.value)}
+                      className="form-control mb-3"
+                      placeholder="Enter Company Name"
+                    />
+                    <textarea
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      placeholder="Enter Job Description"
+                    />
+                    <input
+                      type="text"
+                      value={environment}
+                      onChange={(e) => setEnvironment(e.target.value)}
+                      className="form-control mb-3"
+                      placeholder="Enter Environment"
+                    />
+                    <input
+                      type="text"
+                      value={start_date}
+                      onChange={(e) => setStartDate(e.target.value)}
+                      className="form-control mb-3"
+                      placeholder="Enter Start Date"
+                    />
+                    <input
+                      type="text"
+                      value={end_date}
+                      onChange={(e) => setEndDate(e.target.value)}
+                      className="form-control mb-3"
+                      placeholder="Enter End Date"
+                    />
+                  </div>
+                  <div className="btn-group">
+                    <button className="btn btn-secondary me-2" onClick={() => setShowModal(false)}>
+                      Cancel
+                    </button>
+                    <button className="btn-primary" onClick={handleAddExperience}>
+                      Add
+                    </button>
+                  </div>
+                </Modal>
+              )}
             </div>
-        )
-        )}
+            </>
+          }
+        />
 
+        <Route path="/skills" element={<SkillSet />} />
+      </Routes>
 
-        {showModal && (
-          <Modal onClose={() => setShowModal(false)}>
-            <h5>Add a Experience</h5>
-            <div className='input-wrapper'>
-              <input
-                type="text"
-                value={jobTitle}
-                onChange={(e) => setJobTitle(e.target.value)}
-                className="form-control mb-3"
-                placeholder="Enter Job Title"
-              />
-              <input
-                type="text"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
-                className="form-control mb-3"
-                placeholder="Enter Company Name"
-              />
-              <textarea 
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                placeholder='Enter Job Description'>
-                
-              </textarea>
-              <input
-                type="text"
-                value={environment}
-                onChange={(e) => setEnvironment(e.target.value)}
-                className="form-control mb-3"
-                placeholder="Enter Environment"
-              />  
-              <input
-                type="text"
-                value={start_date}
-                onChange={(e) => setStartDate(e.target.value)}
-                className="form-control mb-3"
-                placeholder="Enter Start Date"
-              />
-              <input
-                type="text"
-                value={end_date}
-                onChange={(e) => setEndDate(e.target.value)}
-                className="form-control mb-3"
-                placeholder="Enter End Date"
-              />
-            </div>
-            <div className="btn-group">
-              <button className="btn btn-secondary me-2" onClick={() => setShowModal(false)}>
-                Cancel
-              </button>
-              <button className="btn-primary" onClick={handleAddExperience}>
-                Add
-              </button>
-            </div>
-            
-            {loading && <div className="modal-overlay">
-              <div className="loader"></div>
-            </div>}
-          </Modal>
-        )}
     </div>
   )
 }

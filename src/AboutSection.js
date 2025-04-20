@@ -3,6 +3,7 @@ import React from 'react'
 const AboutSection = () => {
   return (
     <div className='about-section'>
+        <div className='content-area'>
         <h2>About</h2>
 
         <p>Computer Science graduate with more than 12 years of experience in Analysis, Design, Development and implementation of Web Designing Applications in sectors like FinTech, Education, Telecom, Travel and Ecommerce.</p>
@@ -16,6 +17,7 @@ const AboutSection = () => {
         <p className='spacer'></p>
         <h2>Education</h2>
         <p>B.Sc. in Computer Science from JaiHind College, Mumbai, India in 2010</p>
+        </div>
 
     </div>
   )

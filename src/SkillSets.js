@@ -73,6 +73,7 @@ const SkillSet = () => {
 
   return (
     <div className='skillset-section'>
+        <div className='content-area'>
         <div className='header-section'>
           <h2>Skillsets</h2>
           {user && (
@@ -121,6 +122,7 @@ const SkillSet = () => {
             </div>}
           </Modal>
         )}
+        </div>
     </div>
     // <div className="skillset-container">
     //   <h3>Add Your Skills</h3>
