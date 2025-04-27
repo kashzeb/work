@@ -1,18 +1,26 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {AppContext} from './AppContext';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const {user, isLoading, handleLogin, logoutUser, error, success}= useContext(AppContext)
     
       const [showModal, setShowModal] = useState(false);
-      const [username, setUsername] = useState('');
-      const [password, setPassword] = useState('');
+      const [username, setUsername] = useState('kashif');
+      const [password, setPassword] = useState('123456');
+      const navigate = useNavigate();
     
       const handleSubmit = async (e) => {
         console.log('handleSubmit function called!');
         e.preventDefault();
         await handleLogin(username, password);
       };
+
+      useEffect(()=>{
+        if(success){
+          navigate('/work')
+        }
+      },[success, navigate])
 
   return (
     <div className='login-section'>
@@ -27,7 +35,7 @@ const Login = () => {
                 placeholder="Enter Username"
               />
               <input
-                type="text"
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="form-control mb-3"

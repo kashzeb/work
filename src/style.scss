@@ -154,6 +154,8 @@ button{
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s all;
+    font-size: 16px;
+    font-family: var(--font-family);
 }
 
 .btn-primary{
@@ -563,12 +565,24 @@ button{
 
 }
 
+.cursor-pointer{
+    cursor: pointer;
+}
+
 .mob-menu{
     display: none;
 }
 
 
 @media screen and (max-width: 768px) {
+
+    .hide-on-mob{
+        display: none !important;
+    }
+
+    .w-auto{
+        width: auto !important;
+    }
 
     h2{
         font-size: 20px;
@@ -598,6 +612,7 @@ button{
 
         .mob-menu{
             position: fixed;
+            z-index: 999;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -611,8 +626,8 @@ button{
                 height: auto;
 
                 img{
-                    width: 35px;
-                    height: 35px;
+                    width: 45px;
+                    height: 45px;
                     border-radius: 50%;
                     object-fit: cover;
                 }

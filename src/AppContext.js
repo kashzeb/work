@@ -1,5 +1,6 @@
 import React, {createContext, useState} from 'react'
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const AppContext = createContext();
 
@@ -18,8 +19,11 @@ export function AppProvider({ children }){
     }
 
     const logoutUser = () => {
+        setIsLoading(true)
         setUser(null);
-        localStorage.removeItem('user')
+        localStorage.removeItem('user');
+        setSuccess('');
+        toast.success('Logged out successfully')
     };
 
 
@@ -40,6 +44,7 @@ export function AppProvider({ children }){
             loginUser(userData[0]);  // Pass user to parent or store in state
             localStorage.setItem('user', JSON.stringify(userData[0])); // Store user data
             // setShowModal(false)        // Close modal
+            toast.success('Logged in successfully')
             setSuccess('Logged in successfully')
             setError('')
             setIsLoading(false)

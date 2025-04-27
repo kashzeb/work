@@ -32,10 +32,25 @@ const Sidebar = () => {
   return (
     <div>
       <nav className='mob-menu' >
-        <div className='thumbnail'>
+        <div className='thumbnail cursor-pointer' onClick={toggleSidebar}>
             <img src={`${process.env.PUBLIC_URL}/kashif-khan-front-end-developer-profile-pic.jpg`} alt='thumbnail' />
         </div>
-          <svg onClick={toggleSidebar} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+
+        {!user && (
+        <NavLink  to="/login" className='btn-primary-link w-auto'>Login</NavLink >
+      )}
+
+        {user && (
+        <div onClick={logoutUser}>
+          {/* <button className="btn-primary" >
+          Logout
+        </button> */}
+
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        </div>
+      )}
+          {/* <svg onClick={toggleSidebar} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg> */}
     </nav>
 
     {/* Overlay */}
@@ -61,9 +76,9 @@ const Sidebar = () => {
 
       </div>
 
-      <div>
+      <div className='hide-on-mob'>
       {!user && (
-        <NavLink  to="/login" className='btn-primary-link' onClick={toggleSidebar}>Login</NavLink >
+        <NavLink  to="/login" className='btn-primary-link'>Login</NavLink >
       )}
 
         {user && (
