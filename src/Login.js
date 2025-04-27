@@ -6,8 +6,8 @@ const Login = () => {
     const {user, isLoading, handleLogin, logoutUser, error, success}= useContext(AppContext)
     
       const [showModal, setShowModal] = useState(false);
-      const [username, setUsername] = useState('kashif');
-      const [password, setPassword] = useState('123456');
+      const [username, setUsername] = useState('');
+      const [password, setPassword] = useState('');
       const navigate = useNavigate();
     
       const handleSubmit = async (e) => {
