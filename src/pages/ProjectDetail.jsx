@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import Cover, { shot } from '../components/Cover.jsx';
+import DesignGallery from '../components/DesignGallery.jsx';
 import { projects } from '../data/projects.js';
 
 // Thumbnail of a live site; shows nothing but the label if the image is missing.
@@ -44,6 +45,8 @@ export default function ProjectDetail() {
       <div className="case-block"><span className="mono accent">Problem</span><p>{p.problem}</p></div>
       <div className="case-block"><span className="mono accent">Solution</span><p>{p.solution}</p></div>
       <div className="case-block"><span className="mono accent">Result</span><p>{p.result}</p></div>
+
+      {p.slug === 'graphic-design' && <DesignGallery />}
 
       {p.links.length > 0 && (
         <div className="case-block">
