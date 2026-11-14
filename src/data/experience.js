@@ -8,7 +8,7 @@ export const experience = [
     summary: 'Delivering websites and stores directly for business owners in India, the UAE and Canada.',
     points: [
       'Delivered 30+ live websites across retail, food, fashion, healthcare, legal and finance, manufacturing, real estate and creative services.',
-      'Built 9 e-commerce stores on Shopify and WooCommerce: collections, search, cart and checkout, wishlist / compare and WhatsApp ordering.',
+      'Built 11 e-commerce stores on Shopify and WooCommerce: collections, search, cart and checkout, wishlist / compare and WhatsApp ordering.',
       'Built Next.js product-catalog sites with request-a-quote flows for industrial suppliers in Mumbai and the UAE.',
       'Developed 20+ responsive WordPress / Elementor business sites with lead-capture forms, booking calls-to-action, WhatsApp and click-to-call.',
     ],

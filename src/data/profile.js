@@ -24,6 +24,6 @@ export const profile = {
   stats: [
     { value: 14, suffix: '+', label: 'Years in front-end' },
     { value: 30, suffix: '+', label: 'Live sites shipped since Aug 2025' },
-    { value: 9, suffix: '', label: 'E-commerce stores built' },
+    { value: 11, suffix: '', label: 'E-commerce stores built' },
   ],
 };
