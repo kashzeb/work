@@ -65,7 +65,7 @@ export const projects = [
     result: 'Eleven live stores, built directly with the business owners.',
     tags: ['Shopify (Liquid)', 'WooCommerce', 'WordPress', 'WhatsApp & lead forms', 'Responsive design'],
     links: inCats('E-commerce').map(link),
-    cover: 'lagracy.com',
+    cover: 'xclusivewatches.in',
     pattern: 0,
   },
   {
@@ -95,7 +95,7 @@ export const projects = [
     result: 'Nine live profile and portfolio sites for dental, legal, finance, waterproofing, nutrition and creative practices.',
     tags: ['WordPress', 'Elementor', 'WhatsApp & lead forms', 'On-page SEO', 'Responsive design'],
     links: inCats('Business profile', 'Healthcare').map(link),
-    cover: 'toothastu.com',
+    cover: 'clicksystudio.com',
     pattern: 2,
   },
   {
