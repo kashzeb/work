@@ -394,3 +394,17 @@ main { padding-top: 60px; min-height: 100vh; }
 .nav-cta { padding: 8px 14px; font-size: 12px; }
 .mobile-foot .btn { align-self: flex-start; margin: 4px 0; }
 @media (max-width: 860px) { .nav-cta { display: none; } }
+
+/* phone-only bottom bar: resume + contact, on every screen */
+.dock { display: none; }
+@media (max-width: 860px) {
+  .dock {
+    display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 45;
+    padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px);
+    border-top: 1px solid var(--line);
+  }
+  .dock .btn { flex: 1; justify-content: center; white-space: nowrap; padding: 14px 10px; font-size: 12px; }
+  .footer { padding-bottom: calc(32px + 76px + env(safe-area-inset-bottom)); }
+}
+@media print { .dock { display: none; } }

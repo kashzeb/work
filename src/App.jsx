@@ -6,6 +6,7 @@ import Footer from './components/Footer.jsx';
 import Preloader from './components/Preloader.jsx';
 import Cursor from './components/Cursor.jsx';
 import ContactModal from './components/ContactModal.jsx';
+import MobileDock from './components/MobileDock.jsx';
 import CommandPalette from './components/CommandPalette.jsx';
 import Home from './pages/Home.jsx';
 import Projects from './pages/Projects.jsx';
@@ -43,6 +44,7 @@ export default function App() {
       <Nav onPalette={() => setPalette(true)} onContact={openContact} />
       <CommandPalette open={palette} onClose={() => setPalette(false)} onContact={openContact} />
       <ContactModal open={contact} onClose={() => setContact(false)} />
+      <MobileDock onContact={openContact} />
       <AnimatePresence mode="wait">
         <motion.main
           key={location.pathname}
