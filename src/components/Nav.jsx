@@ -79,6 +79,7 @@ export default function Nav({ onPalette, onContact }) {
         <div className="mobile-foot mono">
           <span><span className="dot" />{profile.availability}</span>
           <button type="button" className="btn solid" onClick={() => { setOpen(false); onContact(); }} tabIndex={open ? 0 : -1}>Get in touch →</button>
+          <a className="btn" href={profile.resumePdf} download tabIndex={open ? 0 : -1}>Download Resume ↓</a>
           <span className="clock">Mumbai {time} IST</span>
         </div>
       </div>

@@ -393,6 +393,7 @@ main { padding-top: 60px; min-height: 100vh; }
 .footer-row .link:hover { color: var(--accent); }
 .nav-cta { padding: 8px 14px; font-size: 12px; }
 .mobile-foot .btn { align-self: flex-start; margin: 4px 0; }
+@media (max-width: 860px) { .mobile-foot a.btn { color: var(--text); } .mobile-foot a.btn:hover { color: var(--accent); } }
 @media (max-width: 860px) { .nav-cta { display: none; } }
 
 /* phone-only bottom bar: resume + contact, on every screen */
