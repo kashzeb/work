@@ -7,7 +7,7 @@ export const profile = {
   phone: '+91 70215 54686',
   phoneTel: '+917021554686',
   whatsapp: 'https://wa.me/917021554686',
-  availability: 'Available: part-time, remote, contract',
+  availability: 'Available: part-time, remote, night shift, contract',
   workingHours: 'Flexible hours, including night shift for US / UK / EU time zones',
   summary:
     'Fourteen years building responsive websites, e-commerce stores and cross-platform mobile apps with React, Next.js, Angular and React Native. Since August 2025 I have shipped 30+ live websites for clients in India, the UAE and Canada.',
