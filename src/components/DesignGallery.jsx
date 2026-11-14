@@ -22,7 +22,7 @@ function Lightbox({ list, index, onClose, onStep }) {
   return createPortal(
     <div className="lb" role="dialog" aria-modal="true" aria-label={`${it.client}: ${it.title}`} onClick={onClose}>
       <button className="lb-close" onClick={onClose} aria-label="Close">×</button>
-      {list.length > 1 && <button className="lb-nav prev" onClick={(e) => { e.stopPropagation(); onStep(-1); }} aria-label="Previous">←</button>}
+      {list.length > 1 && <button className="lb-nav lb-prev" onClick={(e) => { e.stopPropagation(); onStep(-1); }} aria-label="Previous">←</button>}
       <figure onClick={(e) => e.stopPropagation()}>
         {it.type === 'video'
           ? <video key={it.id} src={it.video} poster={it.thumb} controls autoPlay playsInline />
@@ -33,7 +33,7 @@ function Lightbox({ list, index, onClose, onStep }) {
           <span className="dim">{index + 1} / {list.length}</span>
         </figcaption>
       </figure>
-      {list.length > 1 && <button className="lb-nav next" onClick={(e) => { e.stopPropagation(); onStep(1); }} aria-label="Next">→</button>}
+      {list.length > 1 && <button className="lb-nav lb-next" onClick={(e) => { e.stopPropagation(); onStep(1); }} aria-label="Next">→</button>}
     </div>,
     document.body
   );

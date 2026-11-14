@@ -432,7 +432,8 @@ main { padding-top: 60px; min-height: 100vh; }
 .lb figcaption .dim { color: rgba(255,255,255,.6); }
 .lb-close { position: absolute; top: 12px; right: 16px; width: 44px; height: 44px; font-size: 30px; line-height: 1; color: #fff; }
 .lb-nav { position: absolute; top: 50%; width: 44px; height: 44px; margin-top: -22px; font-size: 22px; color: #fff; border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.4); }
-.lb-nav.prev { left: 12px; } .lb-nav.next { right: 12px; }
+.lb-nav { display: flex; align-items: center; justify-content: center; padding: 0; }
+.lb-prev { left: 12px; } .lb-next { right: 12px; }
 .lb-nav:hover, .lb-close:hover { color: var(--accent); border-color: var(--accent); }
 @media (max-width: 860px) { .lb-nav { top: auto; bottom: 16px; margin: 0; } .lb figure { padding-bottom: 44px; } }
 @media print { .lb { display: none; } }
