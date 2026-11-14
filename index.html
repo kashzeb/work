@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0c0a" />
+    <meta name="description" content="Kashif Khan, Senior Front-End Developer with 14+ years building websites, stores and apps. Based in Navi Mumbai. Available for part-time, remote and contract work." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=Chakra+Petch:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.setAttribute('data-palette', (/^v([1-9]|10)$/.test(localStorage.getItem('palette')) ? localStorage.getItem('palette') : 'v1'));
+        document.documentElement.setAttribute('data-font', (localStorage.getItem('font') === 'f4' ? 'f4' : 'f2'));
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    </script>
+    <title>Kashif Khan — Senior Front-End Developer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
